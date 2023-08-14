@@ -1,0 +1,1201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+/* ================================================== */
+/* Common styles */
+/* ================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.section-heading {
+  font-size: 12rem;
+  font-weight: 900;
+  /* color: #a79a2d; */
+  /* color: #fff; */
+  color: rgb(196, 196, 196);
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+/* ================================================== */
+/* End of Common styles */
+/* ================================================== */
+
+/* ================================================== */
+/* Dark-Light Mode Button */
+/* ================================================== */
+/* ------------ VARIABLES ------------ */
+:root {
+  /* COLORS */
+  --color: #9176ff;
+  --dark-color: #2b2b2b;
+  --dark-icon-color: #fff;
+  --light-color: #f7f7f7;
+  --light-icon-color: #ffde59;
+}
+
+/* ------------ BASE ------------ */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--light-color);
+} */
+
+/* -------------- BUTTON -------------- */
+.buttonLD {
+  background-color: #fff;
+  width: 15em;
+  height: 8em;
+  border-radius: 10em;
+  padding: 0 0.5em;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  top: 20rem;
+  left: 45%;
+}
+
+.buttonLD__indicator {
+  background-color: #fff;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.buttonLD__icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonLD__icon {
+  color: var(--light-icon-color);
+  font-size: 3rem;
+}
+
+/* -------------- ANIMATION ------------ */
+.buttonLD__icon.animated {
+  animation: spin 0.5s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------- DARKMODE -------------- */
+body.darkmode {
+  background-color: var(--dark-color);
+}
+
+.darkmode .buttonLD {
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.3),
+    inset 8px 0 8px rgba(0, 0, 0, 0.3), inset 0 -4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .buttonLD__indicator {
+  transform: translateX(7em);
+  background-color: var(--dark-color);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .buttonLD__icon {
+  color: var(--dark-icon-color);
+}
+
+/* ================================================== */
+/* End of Dark-Light Mode Button */
+/* ================================================== */
+
+/* ================================================== */
+/* Navbar */
+/* ================================================== */
+.navbar {
+  width: 100%;
+  height: 14rem;
+  background-color: rgb(196, 196, 196);
+  position: fixed;
+  top: -14rem;
+  z-index: 150;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.2rem #000;
+  /* text-align: center; */
+  transition: top 0.4s;
+}
+
+.navbar.change {
+  top: 0;
+  transition: top 0.4s 0.2s;
+}
+
+.navbar-link {
+  color: #aaa;
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  opacity: 0;
+  transition: color 0.3, opacity, 2s;
+}
+
+.change .navbar-link {
+  opacity: 1;
+}
+
+.change .navbar-link:nth-child(1) {
+  transition: opacity 0.4s 0.5s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(2) {
+  transition: opacity 0.4s 0.6s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(3) {
+  transition: opacity 0.4s 0.7s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(4) {
+  transition: opacity 0.4s 0.8s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(5) {
+  transition: opacity 0.4s 0.9s, color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #fff;
+}
+
+.navbar-link i {
+  font-size: 7rem;
+  color: #000;
+}
+
+.navbar-link span {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  margin-top: 0.5rem;
+  color: #000;
+}
+
+.navbar-link i.home:hover {
+  color: #00ffb38a;
+}
+
+.navbar-link i.meals:hover {
+  color: rgb(185, 234, 243);
+  /* color: rgb(8, 209, 245); */
+}
+
+.navbar-link i.grill:hover {
+  color: rgba(255, 166, 0, 0.918);
+}
+
+.navbar-link i.dessert:hover {
+  color: rgb(245, 134, 153);
+}
+
+.navbar-link i.contact:hover {
+  color: rgb(8, 209, 245);
+}
+
+/* .navbar-link span.meals:hover {
+  color: rgb(185, 234, 243);
+}
+
+.navbar-link span.grill:hover {
+  color: rgba(255, 166, 0, 0.918);
+}
+
+.navbar-link span.dessert:hover {
+  color: rgb(245, 134, 153);
+} */
+
+.menu {
+  width: 4rem;
+  height: 6rem;
+  background-color: #000;
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+  border-radius: 30rem 30rem 15rem 15rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #000, -0.1rem -0.1rem 0.1rem #000;
+  cursor: pointer;
+  z-index: 100;
+  transition: top 0.4s 0.2s;
+}
+
+.menu.change {
+  top: 15rem;
+  transition: top 0.4s;
+}
+
+.menu::before {
+  content: '';
+  width: 0.3rem;
+  height: 15rem;
+  background-color: #000;
+  position: absolute;
+  top: -15rem;
+  left: calc(50% - 0.15rem);
+  box-shadow: 0.1rem 0rem 0.1rem #000;
+  /* transition: all 0.4s; */
+}
+
+.menu:hover {
+  background-color: rgb(196, 196, 196);
+}
+/* ================================================== */
+/* End of Navbar */
+/* ================================================== */
+
+/* ================================================== */
+/* Section 1 */
+/* ================================================== */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  /* background-color: #333; */
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.section-1-icons i {
+  font-size: 35rem;
+  /* color: #a79a2d; */
+  color: rgb(196, 196, 196);
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: transform 0.3s;
+}
+
+.section-1-icons i.change {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s 0.3s;
+}
+
+.section-1-icons i.egg {
+  color: rgba(255, 255, 255, 0.918);
+}
+
+.section-1-icons i.stroopwafel {
+  color: rgba(250, 112, 0, 0.918);
+}
+
+.section-1-icons i.cheese {
+  color: rgb(255, 208, 0);
+}
+
+.section-1-icons i.hotdog {
+  color: rgba(255, 72, 0, 0.918);
+}
+
+.section-1-icons i.drumstick {
+  color: rgba(255, 166, 0, 0.918);
+}
+
+.section-1-icons i.apple {
+  color: rgba(123, 255, 0, 0.993);
+}
+
+.section-1-icons i.icecream {
+  color: rgb(245, 134, 153);
+}
+
+.section-1-icons i.fish {
+  color: rgb(185, 234, 243);
+}
+
+.section-1-icons i.cookie {
+  color: rgba(250, 112, 0, 0.918);
+}
+
+.section-1-icons i.seedling {
+  color: rgba(0, 255, 115, 0.603);
+}
+/* ================================================== */
+/* End of Section 1 */
+/* ================================================== */
+
+/* ================================================== */
+/* Section 2 */
+/* ================================================== */
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  /* background-color: #222; */
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rem 0;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  /* padding: 0.5%; */
+}
+
+.card-wrapper {
+  perspective: 1000rem;
+}
+
+.card {
+  width: 30rem;
+  /* background-color: #a79a2d; */
+  background-color: rgb(196, 196, 196);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1rem 1rem 1rem #000;
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card:before {
+  content: '';
+  height: 100%;
+  width: 1rem;
+  /* background-color: #817824; */
+  background-color: rgb(196, 196, 196);
+  position: absolute;
+  /* top: 0; */
+  /* left: -1rem; */
+  /* transform-origin: rightt; */
+  bottom: 0;
+  right: -1rem;
+  transform: skewY(45deg);
+  transform-origin: left;
+  /* box-shadow: -0.1rem -0.1rem 0.1rem #000; */
+}
+
+.card:after {
+  content: '';
+  width: 100%;
+  height: 1rem;
+  /* background-color: #8f8317; */
+  background-color: rgb(196, 196, 196);
+  position: absolute;
+  /* top: -1rem; */
+  /* left: 0; */
+  /* transform-origin: bottom; */
+  bottom: -1rem;
+  transform: skewX(45deg);
+  transform-origin: top;
+  /* box-shadow: -0.1rem -0.1rem 0.1rem #000; */
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-name {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #111;
+  margin: 2rem 0;
+  text-shadow: 0.15rem 0.15rem 0.15rem #000000b0;
+}
+
+.card-btn {
+  width: 70%;
+  background-color: #111;
+  color: #888;
+  border-radius: 7rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  /* box-shadow: -0.2rem -0.2rem 0.2rem #000; */
+  box-shadow: 0.2rem 0.2rem 0.3rem #000000b0;
+}
+
+.card-first {
+  background-color: rgba(255, 60, 0, 0.445);
+}
+
+.darkmode .card-first {
+  background-color: rgba(255, 60, 0, 0.9);
+}
+
+.card-first:before {
+  background-color: rgba(255, 60, 0, 0.603);
+}
+
+.card-first:after {
+  background-color: rgba(255, 60, 0, 0.603);
+}
+
+.card-second {
+  background-color: rgba(255, 230, 0, 0.445);
+}
+
+.darkmode .card-second {
+  background-color: rgba(255, 230, 0, 0.9);
+}
+
+.card-second:before {
+  background-color: rgba(255, 230, 0, 0.603);
+}
+
+.card-second:after {
+  background-color: rgba(255, 230, 0, 0.603);
+}
+
+.card-third {
+  background-color: rgba(0, 217, 255, 0.445);
+}
+
+.darkmode .card-third {
+  background-color: rgba(0, 217, 255, 0.9);
+}
+
+.card-third:before {
+  background-color: rgba(0, 217, 234, 0.603);
+}
+
+.card-third:after {
+  background-color: rgba(0, 217, 234, 0.603);
+}
+/* ================================================== */
+/* End of Section 2 */
+/* ================================================== */
+
+/* ================================================== */
+/* Section 3 */
+/* ================================================== */
+.section-3 {
+  /* background-color: #333; */
+  /* background-color: #fff; */
+  padding: 5rem 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10rem;
+}
+
+.gallery-link {
+  position: relative;
+  margin: 4rem 1rem;
+}
+
+.gallery-link::before {
+  content: '';
+  position: absolute;
+  top: 2vw;
+  /* left: 80%; */
+  right: 80%;
+  width: 0.2rem;
+  height: 0;
+  background-color: #fff;
+  z-index: 10;
+  transition: height 0.5s;
+}
+
+.gallery-link::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 2rem;
+  width: 0;
+  height: 0.2rem;
+  background-color: #fff;
+  transition: width 0.5s;
+}
+
+.gallery-link:hover::before {
+  height: 80%;
+}
+
+.gallery-link:hover::after {
+  width: 90%;
+}
+
+.food-img {
+  width: 24vw;
+  height: 15vw;
+  object-fit: cover;
+  box-shadow: 0.3rem 0.3rem 0.1rem rgba(255, 60, 0, 0.603),
+    0.7rem 0.7rem 0.1rem rgba(255, 230, 0, 0.603),
+    0.9rem 0.9rem 0.1rem rgba(0, 217, 255, 0.603);
+  transition: all 0.5s;
+}
+
+.gallery-link:hover .food-img {
+  box-shadow: 1rem 1rem 0.1rem rgba(255, 60, 0, 0.603),
+    2rem 2rem 0.1rem rgba(255, 230, 0, 0.603),
+    3rem 3rem 0.1rem rgba(0, 217, 255, 0.603),
+    4rem 4rem 0.1rem rgba(0, 255, 115, 0.603);
+  transform: scale(1.1);
+  filter: blur(0.5rem);
+  opacity: 0.8;
+}
+
+.food-name {
+  position: absolute;
+  /* top: 3rem; */
+  /* left: 3rem; */
+  top: 5rem;
+  left: 11rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.gallery-link:hover .food-name {
+  width: 100%;
+  transition: width 1.5s 0.5;
+}
+
+.food-description {
+  position: absolute;
+  /* bottom: 3vw; */
+  /* left: 2rem; */
+  bottom: 5.4vw;
+  left: 11rem;
+  width: 70%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.gallery-link:hover .food-description {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s 1s;
+}
+/* ================================================== */
+/* End of Section 3 */
+/* ================================================== */
+
+/* ================================================== */
+/* Section 4 */
+/* ================================================== */
+.section-4 {
+  width: 100%;
+  height: 30vh;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0;
+  position: relative;
+  align-items: flex-start;
+}
+
+.section-4-text {
+  text-transform: uppercase;
+}
+
+.section-4-heading {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgb(196, 196, 196);
+  text-shadow: 0.1rem 0.1rem 0.1rem #000;
+}
+
+.section-4-paragraph {
+  font-size: 1.5rem;
+  color: #888;
+  /* text-shadow: 0.1rem 0.1rem 0.1rem #000; */
+}
+
+.signup-form {
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+}
+
+.signup-form-input {
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  border: 0.2rem solid rgb(196, 196, 196);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: rgb(196, 196, 196);
+}
+
+.signup-form-input::placeholder {
+  color: rgb(196, 196, 196);
+}
+
+.signup-form-btn {
+  position: relative;
+  left: -4.5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #333;
+  color: rgb(196, 196, 196);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.7rem;
+  font-weight: 200;
+  color: #333;
+  letter-spacing: 0.1rem;
+  border-top: 0.1rem solid #888;
+  padding-top: 6rem;
+  width: 90%;
+  text-align: center;
+}
+/* ================================================== */
+/* End of Section 4 */
+/* ================================================== */
+
+/* ================================================== */
+/* Responsive */
+/* ================================================== */
+@media (max-width: 1950px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 4rem;
+    left: 12rem;
+  }
+
+  .food-description {
+    bottom: 5.1vw;
+    left: 12rem;
+  }
+}
+
+@media (max-width: 1900px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 4rem;
+    left: 12rem;
+  }
+
+  .food-description {
+    bottom: 4.8vw;
+    left: 12rem;
+  }
+}
+
+@media (max-width: 1850px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 4rem;
+    left: 12rem;
+  }
+
+  .food-description {
+    bottom: 4.8vw;
+    left: 12rem;
+  }
+}
+
+@media (max-width: 1800px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 4rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 4.5vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 1750px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 10rem;
+  }
+
+  .food-description {
+    bottom: 4.5vw;
+    left: 10rem;
+  }
+}
+
+@media (max-width: 1700px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 10rem;
+  }
+
+  .food-description {
+    bottom: 4.2vw;
+    left: 10rem;
+  }
+}
+
+@media (max-width: 1650px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 10rem;
+  }
+
+  .food-description {
+    bottom: 4.2vw;
+    left: 10rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 10rem;
+  }
+
+  .food-description {
+    bottom: 2.8vw;
+    left: 10rem;
+  }
+}
+
+@media (max-width: 1500px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 10rem;
+  }
+
+  .food-description {
+    bottom: 2.5vw;
+    left: 10rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  html {
+    font-size: 50%;
+  }
+
+  .section-2 {
+    height: auto;
+  }
+
+  .cards-container {
+    margin-top: 10rem;
+  }
+
+  .gallery-link {
+    width: 40rem;
+    height: 25rem;
+    margin: 5rem;
+  }
+
+  .food-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 4vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 1350px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 4vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 4.4vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 5vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 5vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section-heading {
+    font-size: 9rem;
+    margin: 0 5rem;
+  }
+
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .section-1-icons i {
+    font-size: 25rem;
+  }
+
+  .card {
+    margin: 0rem -5rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 6vw;
+    left: 11rem;
+  }
+
+  .section-4 {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .cards-container {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin: 5rem;
+  }
+
+  .navbar_link {
+    margin: 2rem;
+  }
+
+  .navbar_link i,
+  .navbar-link i.home,
+  .navbar-link i.meals,
+  .navbar-link i.grill,
+  .navbar-link i.dessert,
+  .navbar-link i.contact {
+    font-size: 4rem;
+  }
+
+  .navbar-link span.home,
+  .navbar-link span.meals,
+  .navbar-link span.grill,
+  .navbar-link span.dessert,
+  .navbar-link span.contact {
+    font-size: 2rem;
+  }
+
+  .buttonLD {
+    left: 45%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 7vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .buttonLD {
+    left: 40%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 7vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-link {
+    margin: 0 2rem;
+  }
+
+  .menu {
+    width: 3.8rem;
+    height: 5.8rem;
+    left: 2rem;
+  }
+
+  .section-heading {
+    font-size: 7rem;
+    margin: 0 10rem;
+  }
+
+  .buttonLD {
+    left: 40%;
+    top: 16rem;
+  }
+
+  .section-1-icons i {
+    font-size: 20rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 9vw;
+    left: 11rem;
+  }
+
+  .section-4 {
+    height: 40rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .section-4-text {
+    margin-bottom: 8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 40%;
+  }
+
+  .navbar-link {
+    margin: 0 0.35rem;
+  }
+
+  .buttonLD {
+    left: 40%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 9vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttonLD {
+    left: 40%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 11vw;
+    left: 11rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .buttonLD {
+    left: 40%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 11rem;
+  }
+
+  .food-description {
+    bottom: 14vw;
+    left: 16rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .buttonLD {
+    left: 35%;
+    top: 16rem;
+  }
+
+  .food-name {
+    top: 3rem;
+    left: 10rem;
+  }
+
+  .food-description {
+    bottom: 12vw;
+    left: 10rem;
+  }
+}
+/* ================================================== */
+/* End of Responsive */
+/* ================================================== */
