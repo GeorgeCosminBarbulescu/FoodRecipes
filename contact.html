@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=4.0" />
+    <title>Food Recipes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===================================== -->
+    <!-- Navbar -->
+    <!-- ===================================== -->
+    <nav class="navbar target">
+      <a href="index.html" class="navbar-link">
+        <i class="fas fa-home home"></i>
+        <span class="home">Home</span>
+      </a>
+      <a href="meals.html" class="navbar-link">
+        <i class="fas fa-utensils meals"></i>
+        <span class="meals">Meals</span>
+      </a>
+      <a href="grills.html" class="navbar-link">
+        <i class="fas fa-hamburger grill"></i>
+        <span class="grill">Grills</span>
+      </a>
+      <a href="desserts.html" class="navbar-link">
+        <i class="fas fa-cake dessert"></i>
+        <span class="dessert">Desserts</span>
+      </a>
+      <a href="contact.html" class="navbar-link">
+        <i class="fas fa-phone contact"></i>
+        <span class="contact">Contact</span>
+      </a>
+    </nav>
+    <div class="menu target"></div>
+    <!-- ===================================== -->
+    <!-- End of Navbar -->
+    <!-- ===================================== -->
+
+    <!-- Container -->
+    <!-- Button LD -->
+    <div class="container">
+      <div class="buttonLD">
+        <div class="buttonLD__indicator">
+          <div class="buttonLD__icon-container">
+            <i class="buttonLD__icon fa-solid fa-sun"></i>
+          </div>
+        </div>
+      </div>
+      <!-- End of Button LD -->
+      <!-- ===================================== -->
+      <!-- Section 1 -->
+      <!-- ===================================== -->
+      <section class="section-1">
+        <!-- <h1 class="section-heading">Contact</h1> -->
+        <div class="section-1-icons">
+          <!-- <i class="change fas fa-egg egg"></i>
+          <i class="fas fa-stroopwafel stroopwafel"></i>
+          <i class="fas fa-cheese cheese"></i>
+          <i class="fas fa-hotdog hotdog"></i>
+          <i class="fas fa-drumstick-bite drumstick"></i>
+          <i class="fas fa-apple-alt apple"></i>
+          <i class="fas fa-ice-cream icecream"></i>
+          <i class="fas fa-fish fish"></i>
+          <i class="fas fa-cookie cookie"></i>
+          <i class="fas fa-seedling seedling"></i> -->
+          <div class="contact-container">
+            <div class="contact-details">
+              <h1 class="contact-header">Get in touch</h1>
+              <p class="contact-paragraph">
+                For more recipes, please fill the form and we will be more than
+                happy to assist you.
+              </p>
+              <div class="list-container">
+                <ul class="contact-list">
+                  <li class="contact-list-info">
+                    <div class="contact-info-container">
+                      <div class="contact-info">
+                        <div class="phone_info">
+                          <p class="phone-paragraph">
+                            <span class="fa fa-phone"></span>+12345678910
+                          </p>
+                        </div>
+                        <div class="email_info">
+                          <p class="email-paragraph">
+                            <span class="fa fa-envelope"></span
+                            >recipesbox@recipesbox.com
+                          </p>
+                        </div>
+                        <div class="location_info">
+                          <p class="location-paragraph">
+                            <span class="fa fa-location-dot"></span>Recipe
+                            Island, Food Planet
+                          </p>
+                        </div>
+                      </div>
+                      <!-- <div class="contact-social">
+                        <ul class="social-media-contact" id="#links--2">
+                          <li class="social-item-contact">
+                            <a
+                              href="#"
+                              class="social-link-contact"
+                              ><i class="fa-brands fa-linkedin-in"></i
+                            ></a>
+                          </li>
+                          <li class="social-item-contact">
+                            <a
+                              href="#"
+                              class="social-link-contact"
+                              ><i class="fa-brands fa-github"></i
+                            ></a>
+                          </li>
+                          <li class="social-item-contact">
+                            <a
+                              href="#"
+                              class="social-link-contact"
+                              ><i class="fa-brands fa-twitter"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div> -->
+                    </div>
+                  </li>
+                  <li class="contact-list-item">
+                    <form class="contact-form-container" id="messageForm">
+                      <div class="name-container-wrapper">
+                        <div class="name-container">
+                          <p class="fa-regular fa-user label-icon"></p>
+                          <label id="name-label" for="name">Name</label>
+                        </div>
+                        <input
+                          class="name-input"
+                          id="name"
+                          type="text"
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="name-container-wrapper">
+                        <div class="email-container">
+                          <p class="fa-regular fa-envelope label-icon"></p>
+                          <label id="email-label" for="name">Email</label>
+                        </div>
+                        <input
+                          class="name-input"
+                          placeholder=""
+                          id="email"
+                          type="text"
+                        />
+                      </div>
+                      <div class="name-container-wrapper">
+                        <div class="text-container">
+                          <p class="fa-regular fas fa-edit"></p>
+                          <label for="message" id="text-label" for="name"
+                            >Message</label
+                          >
+                        </div>
+                        <textarea
+                          class="name-input input-text"
+                          placeholder="Type something interesting :)"
+                          id="message"
+                          name="message"
+                          type="text"
+                        ></textarea>
+                      </div>
+                      <div class="send-container">
+                        <button type="button" class="btn-send" id="sendButton">
+                          Send Message
+                        </button>
+                      </div>
+                    </form>
+                    <div id="successMessage" class="hidden">
+                      Message successfully sent!
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===================================== -->
+      <!-- End of Section 1 -->
+      <!-- ===================================== -->
+
+      <!-- ===================================== -->
+      <!-- Section 2 -->
+      <!-- ===================================== -->
+      <!-- Items moved in section 1 -->
+      <!-- ===================================== -->
+      <!-- End of Section 2 -->
+      <!-- ===================================== -->
+    </div>
+    <!-- End of Container -->
+    <script src="script.js"></script>
+  </body>
+</html>

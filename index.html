@@ -19,19 +19,19 @@
         <i class="fas fa-home home"></i>
         <span class="home">Home</span>
       </a>
-      <a href="#" class="navbar-link">
+      <a href="meals.html" class="navbar-link">
         <i class="fas fa-utensils meals"></i>
         <span class="meals">Meals</span>
       </a>
-      <a href="#" class="navbar-link">
+      <a href="grills.html" class="navbar-link">
         <i class="fas fa-hamburger grill"></i>
         <span class="grill">Grills</span>
       </a>
-      <a href="#" class="navbar-link">
+      <a href="desserts.html" class="navbar-link">
         <i class="fas fa-cake dessert"></i>
         <span class="dessert">Desserts</span>
       </a>
-      <a href="#" class="navbar-link">
+      <a href="contact.html" class="navbar-link">
         <i class="fas fa-phone contact"></i>
         <span class="contact">Contact</span>
       </a>
@@ -80,21 +80,27 @@
       <section class="section-2">
         <h1 class="section-heading">Popular Recipes</h1>
         <div class="cards-container">
-          <div class="card card-first">
-            <img src="images/card-img-3.png" alt="" class="card-img" />
-            <h3 class="card-name">Lobster</h3>
-            <button class="card-btn">Check recipes</button>
-          </div>
-          <div class="card card-second">
-            <img src="images/card-img-2.png" alt="" class="card-img" />
-            <h3 class="card-name">Cakes</h3>
-            <button class="card-btn">Check recipes</button>
-          </div>
-          <div class="card card-third">
-            <img src="images/card-img-1.png" alt="" class="card-img" />
-            <h3 class="card-name">Fish</h3>
-            <button class="card-btn">Check recipes</button>
-          </div>
+          <a href="lobsterrecipes.html" class="lobster_link">
+            <div class="card card-first">
+              <img src="images/card-img-3.png" alt="" class="card-img" />
+              <h3 class="card-name">Lobster</h3>
+              <button class="card-btn">Check recipes</button>
+            </div>
+          </a>
+          <a href="cakesrecipes.html" class="cakes_link">
+            <div class="card card-second">
+              <img src="images/card-img-2.png" alt="" class="card-img" />
+              <h3 class="card-name">Cakes</h3>
+              <button class="card-btn">Check recipes</button>
+            </div>
+          </a>
+          <a href="fishrecipes.html" class="fish_link">
+            <div class="card card-third">
+              <img src="images/card-img-1.png" alt="" class="card-img" />
+              <h3 class="card-name">Fish</h3>
+              <button class="card-btn">Check recipes</button>
+            </div>
+          </a>
         </div>
       </section>
       <!-- ===================================== -->
@@ -107,7 +113,7 @@
       <section class="section-3">
         <h1 class="section-heading">Gallery</h1>
         <div class="gallery">
-          <a href="#" class="gallery-link" title="Order Now">
+          <a href="desserts.html" class="gallery-link" title="Order Now">
             <img src="images/gallery-img-1.jpg" class="food-img" />
             <h3 class="food-name">Pancakes</h3>
             <p class="food-description">
@@ -115,7 +121,7 @@
               commodi possimus iure hic excepturi. Corporis!
             </p>
           </a>
-          <a href="#" class="gallery-link" title="Order Now">
+          <a href="desserts.html" class="gallery-link" title="Order Now">
             <img src="images/gallery-img-2.jpg" class="food-img" />
             <h3 class="food-name">Cupcakes</h3>
             <p class="food-description">
@@ -123,7 +129,7 @@
               commodi possimus iure hic excepturi. Corporis!
             </p>
           </a>
-          <a href="#" class="gallery-link" title="Order Now">
+          <a href="desserts.html" class="gallery-link" title="Order Now">
             <img src="images/gallery-img-3.jpg" class="food-img" />
             <h3 class="food-name">Tarts</h3>
             <p class="food-description">
@@ -131,7 +137,7 @@
               commodi possimus iure hic excepturi. Corporis!
             </p>
           </a>
-          <a href="#" class="gallery-link" title="Order Now">
+          <a href="grills.html" class="gallery-link" title="Order Now">
             <img src="images/gallery-img-4.jpg" class="food-img" />
             <h3 class="food-name">Hamburger</h3>
             <p class="food-description">
@@ -139,7 +145,7 @@
               commodi possimus iure hic excepturi. Corporis!
             </p>
           </a>
-          <a href="#" class="gallery-link" title="Order Now">
+          <a href="fishrecipes.html" class="gallery-link" title="Order Now">
             <img src="images/gallery-img-5.jpg" class="food-img" />
             <h3 class="food-name">Fish</h3>
             <p class="food-description">
@@ -147,7 +153,11 @@
               commodi possimus iure hic excepturi. Corporis!
             </p>
           </a>
-          <a href="#" class="gallery-link" title="Order Now">
+          <a
+            href="vegetablesrecipes.html"
+            class="gallery-link"
+            title="Order Now"
+          >
             <img src="images/gallery-img-6.jpg" class="food-img" />
             <h3 class="food-name">Vegetables</h3>
             <p class="food-description">
@@ -171,16 +181,17 @@
             BE THE FIRST TO KNOW ABOUT NEW PRODUCTS
           </p>
         </div>
-        <form class="signup-form">
+        <form class="signup-form" id="messageForm">
           <input
             type="email"
             class="signup-form-input"
             placeholder="Enter Your Email"
           />
-          <button type="submit" class="signup-form-btn">
+          <button type="submit" class="signup-form-btn" id="sendButton">
             <i class="fas fa-arrow-right"></i>
           </button>
         </form>
+        <div id="successMessage" class="hidden">Message successfully sent!</div>
         <p class="copyright">
           George Cosmin Barbulescu &copy; All rights reserved
         </p>

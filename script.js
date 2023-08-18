@@ -1,13 +1,29 @@
 'use strict';
 
+const menuButton = document.querySelector('.menu');
+const targetElements = document.querySelectorAll('.target');
+
 /////////////////////////////////////////////////////////////
 // Nav menu button
-document.querySelector('.menu').addEventListener('click', function () {
-  document.querySelectorAll('.target').forEach(function (item) {
+menuButton.addEventListener('click', function () {
+  targetElements.forEach(function (item) {
     // drop down menu and hide
     item.classList.toggle('change');
   });
+
+  // Store the visibility state in local storage
+  const isMenuVisible = targetElements[0].classList.contains('change');
+  localStorage.setItem('menuVisible', isMenuVisible);
 });
+
+/////////////////////////////////////////////////////////////
+// Load menu visibility state from local storage
+const storedMenuVisible = localStorage.getItem('menuVisible');
+if (storedMenuVisible === 'true') {
+  targetElements.forEach(function (item) {
+    item.classList.add('change');
+  });
+}
 
 /////////////////////////////////////////////////////////////
 // Section 1 icons change loop
@@ -50,11 +66,11 @@ const loadFromLocal = function () {
     storeLocal(false);
     iconLD.classList.add('fa-sun');
   } else if (darkmode == 'true') {
-    //if the dark mode is activated
+    // if the dark mode is activated
     bodyLD.classList.add('darkmode');
     iconLD.classList.add('fa-moon');
   } else if (darkmode == 'false') {
-    //if the dark mode exists but is disabled
+    // if the dark mode exists but is disabled
     iconLD.classList.add('fa-sun');
   }
 };
@@ -81,4 +97,37 @@ buttonLD.addEventListener('click', function () {
   }, 500);
 });
 
+//////////////////////////////////////////////////////////////
+// Contact form - Send mesage
+document.addEventListener('DOMContentLoaded', function () {
+  const sendButton = document.getElementById('sendButton');
+  const successMessage = document.getElementById('successMessage');
+  const sendEmailSuccess = document.getElementById('successMessage');
+  const messageForm = document.getElementById('messageForm');
+
+  // Guard clause, skip error message 'sendButton is null'
+  if (sendButton === null) return;
+
+  sendButton.addEventListener('click', function (e) {
+    // add code here to send the message to a server or perform any desired action
+    e.preventDefault();
+
+    setTimeout(function () {
+      showSuccessMessage();
+    }, 1000);
+  });
+
+  const showSuccessMessage = function () {
+    successMessage.classList.remove('hidden');
+    sendEmailSuccess.classList.remove('hidden');
+    messageForm.reset();
+    setTimeout(function () {
+      hideSuccessMessage();
+    }, 3000);
+  };
+
+  const hideSuccessMessage = function () {
+    successMessage.classList.add('hidden');
+  };
+});
 /////////////////////////////////////////////////////////////
