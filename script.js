@@ -1,7 +1,18 @@
 'use strict';
 
+// Variables for: Nav menu button section
 const menuButton = document.querySelector('.menu');
 const targetElements = document.querySelectorAll('.target');
+const storedMenuVisible = localStorage.getItem('menuVisible');
+
+// Variables for: Icons change loop section
+const icons = document.querySelectorAll('.section-1-icons i');
+let i = 1;
+
+// Variables for: Light-Dark button
+const bodyLD = document.querySelector('body');
+const buttonLD = document.querySelector('.buttonLD');
+const iconLD = document.querySelector('.buttonLD__icon');
 
 /////////////////////////////////////////////////////////////
 // Nav menu button
@@ -18,7 +29,7 @@ menuButton.addEventListener('click', function () {
 
 /////////////////////////////////////////////////////////////
 // Load menu visibility state from local storage
-const storedMenuVisible = localStorage.getItem('menuVisible');
+
 if (storedMenuVisible === 'true') {
   targetElements.forEach(function (item) {
     item.classList.add('change');
@@ -27,9 +38,6 @@ if (storedMenuVisible === 'true') {
 
 /////////////////////////////////////////////////////////////
 // Section 1 icons change loop
-const icons = document.querySelectorAll('.section-1-icons i');
-
-let i = 1;
 
 setInterval(function () {
   i++;
@@ -47,10 +55,6 @@ setInterval(function () {
 
 /////////////////////////////////////////////////////////////
 // Light-Dark button
-
-const bodyLD = document.querySelector('body');
-const buttonLD = document.querySelector('.buttonLD');
-const iconLD = document.querySelector('.buttonLD__icon');
 
 //to save the dark mode use the object "local storage" by creating a function that stores the value true if the dark mode is activated or false if it's not.
 const storeLocal = function (value) {
@@ -74,7 +78,6 @@ const loadFromLocal = function () {
     iconLD.classList.add('fa-sun');
   }
 };
-
 loadFromLocal();
 
 buttonLD.addEventListener('click', function () {
